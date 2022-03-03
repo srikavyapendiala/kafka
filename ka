@@ -1,0 +1,11 @@
+apiVersion: kafka.strimzi.io/v1beta1
+kind: Kafka
+metadata:
+  name: my-cluster
+spec:
+  kafka:
+    # ...
+    authorization:
+      type: opa
+      url: http://opa.namespace.svc:8181/v1/data/kafka/authz/allow
+    # ...
